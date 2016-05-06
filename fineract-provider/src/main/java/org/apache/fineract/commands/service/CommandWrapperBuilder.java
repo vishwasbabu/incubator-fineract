@@ -2726,5 +2726,31 @@ public class CommandWrapperBuilder {
         this.href = "/self/beneficiaries/tpt/"+beneficiaryId;
         return this;
 	}
+	
+    public CommandWrapperBuilder createFamilyMembers(final Long clientId) {
+        this.actionName = "CREATE";
+        this.entityName = "FAMILYMEMBER";
+        this.clientId = clientId;
+        this.href = "/clients" + "/" + clientId + "/familymembers";
+        return this;
+    }
+
+    public CommandWrapperBuilder updateFamilyMembers(final Long clientId, final Long familyMemberId) {
+        this.actionName = "UPDATE";
+        this.entityName = "FAMILYMEMBER";
+        this.entityId = familyMemberId;
+        this.clientId = clientId;
+        this.href = "/clients" + "/" + clientId + "/familymembers/" + familyMemberId;
+        return this;
+    }
+
+    public CommandWrapperBuilder deleteFamilyMembers(final Long clientId,final Long familyMemberId) {
+        this.actionName = "DELETE";
+        this.entityName = "FAMILYMEMBER";
+        this.entityId = familyMemberId;
+        this.clientId = clientId;
+        this.href = "/clients" + "/" + clientId + "/familymembers/" + familyMemberId;
+        return this;
+    }
 
 }
